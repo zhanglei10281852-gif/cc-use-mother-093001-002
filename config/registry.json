@@ -1,0 +1,20 @@
+{
+  "ack_timeout_minutes": 15,
+  "escalation_intervals_minutes": [15, 30],
+  "drain_windows_minutes": {"high": 30, "medium": 60, "low": 120},
+  "drain_epsilon_m3": 1.0,
+  "pipe_critical_level_m": {"BASIN-A": 3.5, "BASIN-B": 3.0, "BASIN-C": 4.0},
+  "basins": [
+    {"basin_id": "BASIN-A", "area_km2": 2.4, "storage_capacity_m3": 18000, "road_risk": "high", "priority": 1},
+    {"basin_id": "BASIN-B", "area_km2": 1.6, "storage_capacity_m3": 12000, "road_risk": "medium", "priority": 2},
+    {"basin_id": "BASIN-C", "area_km2": 3.1, "storage_capacity_m3": 26000, "road_risk": "low", "priority": 3}
+  ],
+  "devices": [
+    {"device_id": "PUMP-1", "basin_id": "BASIN-A", "kind": "pump", "capacity_m3_min": 22.0, "interlock_group": "A-1"},
+    {"device_id": "PUMP-2", "basin_id": "BASIN-A", "kind": "pump", "capacity_m3_min": 18.0},
+    {"device_id": "GATE-1", "basin_id": "BASIN-A", "kind": "gate", "capacity_m3_min": 30.0, "interlock_group": "A-1"},
+    {"device_id": "PUMP-3", "basin_id": "BASIN-B", "kind": "pump", "capacity_m3_min": 18.0},
+    {"device_id": "GATE-2", "basin_id": "BASIN-B", "kind": "gate", "capacity_m3_min": 25.0},
+    {"device_id": "PUMP-4", "basin_id": "BASIN-C", "kind": "pump", "capacity_m3_min": 20.0}
+  ]
+}
