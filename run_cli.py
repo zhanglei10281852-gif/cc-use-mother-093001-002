@@ -1,6 +1,11 @@
 import json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent / "src"))
+
+if len(sys.argv) > 1:
+    from drainage_dispatch.cli import main
+    sys.exit(main(sys.argv[1:]))
+
 from drainage_dispatch.contracts import CommandAction, DrainageDevice, StormSnapshot
 
 storm = StormSnapshot("ST-01", 72.5, ("BASIN-A",))
